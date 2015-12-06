@@ -35,6 +35,6 @@ RUN curl -sL --retry 3 "http://central.maven.org/maven2/org/apache/hadoop/hadoop
  && curl -sL --retry 3 "http://central.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar" -o $SPARK_HOME/lib/google-collections-1.0.jar \
  && curl -sL --retry 3 "http://central.maven.org/maven2/joda-time/joda-time/2.8.2/joda-time-2.8.2.jar" -o $SPARK_HOME/lib/joda-time-2.8.2.jar
 
-COPY conf/* /usr/spark/conf/
+ADD conf/ /usr/spark/conf/
 
 CMD /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master
