@@ -1,5 +1,5 @@
 master:
-  image: gettyimages/spark
+  image: dictcp/spark
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   hostname: master
   environment:
@@ -23,7 +23,7 @@ master:
     - ./data:/tmp/data
 
 worker:
-  image: gettyimages/spark
+  image: dictcp/spark
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   hostname: worker
   environment:
